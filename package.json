@@ -1,8 +1,8 @@
 {
-  "name": "react-easy-markdown",
+  "name": "react-easy-slate-markdown",
   "version": "1.0.0",
   "description": "A Easy React Markdown",
-  "author": "pink-natsuko",
+  "author": "pinksuko",
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -10,6 +10,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "dev": "rollup -c --watch",
     "build": "rollup -c",
@@ -26,5 +29,9 @@
     "rollup-plugin-postcss": "^4.0.2",
     "tslib": "^2.6.3",
     "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "slate": "^0.103.0",
+    "slate-react": "^0.108.0"
   }
 }
