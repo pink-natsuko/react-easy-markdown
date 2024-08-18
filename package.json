@@ -1,13 +1,20 @@
 {
   "name": "react-easy-markdown",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A Easy React Markdown",
+  "author": "pink-natsuko",
+  "license": "MIT",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "dev": "rollup -c --watch",
+    "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
