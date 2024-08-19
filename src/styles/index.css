@@ -1,0 +1,24 @@
+.base_tools_editor_btn {
+    background-color: transparent;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+.active_tools_editor_btn {
+    background-color: #dfe8fa4d;
+}
+
+.tools_editor_container {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}

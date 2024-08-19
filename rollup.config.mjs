@@ -21,8 +21,8 @@ export default [
             },
         ],
         plugins: [
-            resolve(),
-            commonjs(),
+            resolve(), // 解析外部依赖
+            commonjs(), // 将CommonJS 模块转换为ES模块
             typescript({ tsconfig: './tsconfig.json', exclude: ['**/*.test.tsx', '**/*.test.ts', '**/*.stories.ts'] }),
             postcss({ extensions: ['.css'], inject: true, extract: false }),
         ],
@@ -30,7 +30,9 @@ export default [
     {
         input: 'dist/esm/types/index.d.ts',
         output: [{ file: 'dist/index.d.ts', format: 'esm' }],
-        plugins: [dts()],
+        plugins: [
+            dts()
+        ],
         external: [/\.css$/],
     },
 ];
