@@ -5,24 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="575098ac-d45c-4e8f-85e8-f065240b31cc" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Editor/CustomEditor.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Editor/EditorTools.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Editor/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BlockButton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MarkButton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/RenderElements.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/RenderLeaf.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ref.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MarkdownEditor/Editor.stories.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MarkdownRender/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/ExamplesEasyMarkdownEditor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/examples/ExamplesEasyMarkdownEditor.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rollup.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/rollup.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Editor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom-types.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Editor/CustomEditor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/MarkdownEditor/CustomEditor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Editor/EditorTools.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/MarkdownEditor/EditorTools.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Editor/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/MarkdownEditor/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BlockButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BlockButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MarkButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MarkButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RenderElements.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RenderElements.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom-types.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom-types.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ref.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +36,9 @@
       <list>
         <option value="tsconfig.json" />
         <option value="JavaScript File" />
-        <option value="TypeScript JSX File" />
-        <option value="TypeScript File" />
         <option value="CSS File" />
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -55,12 +57,17 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/openProject/react-easy-markdown",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "npm.build (1).executor": "Run",
+    "npm.build.executor": "Run",
+    "npm.publish.executor": "Run",
+    "npm.storybook.executor": "Run",
     "npm.test.executor": "Run",
     "ts.external.directory.path": "D:\\openProject\\react-easy-markdown\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
@@ -73,7 +80,44 @@
       <recent name="D:\openProject\react-easy-markdown\src\Editor" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.publish">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="publish" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="publish" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="storybook" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="storybook" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -84,8 +128,16 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="npm.publish" />
+      <item itemvalue="npm.storybook" />
+      <item itemvalue="npm.dev" />
+      <item itemvalue="npm.build" />
+      <item itemvalue="npm.test" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.test" />
       </list>
     </recent_temporary>
@@ -105,7 +157,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723887237166</updated>
-      <workItem from="1723887238275" duration="41530000" />
+      <workItem from="1723887238275" duration="85379000" />
+      <workItem from="1724202802368" duration="25006000" />
     </task>
     <servers />
   </component>

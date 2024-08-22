@@ -1,6 +1,7 @@
 import React from 'react'
 import {useSlate} from 'slate-react'
-import CustomEditor from '../Editor/CustomEditor'
+import CustomEditor from '../MarkdownEditor/CustomEditor'
+import styles from '../styles/index.module.css'
 
 type MarkButtonProps = {
     children: React.ReactElement,
@@ -22,7 +23,8 @@ const MarkButton: React.FC<MarkButtonProps> = (props) => {
     return (
         <button
             aria-label={format}
-            className={`'base_tools_editor_btn' ${isActive ? 'active_tools_editor_btn' : ' '}`}
+            data-active={isActive}
+            className={styles.base_tools_editor_btn}
             onMouseDown={onMousedown}
         >{children}</button>
     )

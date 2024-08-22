@@ -66,6 +66,11 @@ export type CustomEditor = BaseEditor &
     nodeToDecorations?: Map<Element, Range[]>
 }
 
+declare module '*.module.css' {
+    const classes: { [key: string]: string };
+    export default classes;
+}
+
 declare module 'slate' {
     interface CustomTypes {
         Editor: CustomEditor

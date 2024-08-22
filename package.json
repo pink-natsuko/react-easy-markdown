@@ -1,6 +1,6 @@
 {
   "name": "react-easy-slate-markdown",
-  "version": "1.0.0",
+  "version": "0.3.8",
   "description": "A Easy React Markdown",
   "author": "pinksuko",
   "license": "MIT",
@@ -16,20 +16,33 @@
   "scripts": {
     "dev": "rollup -c --watch",
     "build": "rollup -c",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.6.1",
     "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.6",
+    "@storybook/addon-essentials": "^8.2.9",
+    "@storybook/addon-interactions": "^8.2.9",
+    "@storybook/addon-links": "^8.2.9",
+    "@storybook/addon-onboarding": "^8.2.9",
+    "@storybook/blocks": "^8.2.9",
+    "@storybook/react": "^8.2.9",
+    "@storybook/react-vite": "^8.2.9",
+    "@storybook/test": "^8.2.9",
     "@testing-library/jest-dom": "^6.4.8",
     "@testing-library/react": "^16.0.0",
+    "@types/css-modules": "^1.0.5",
     "@types/react": "^18.3.3",
     "jest": "^29.7.0",
     "react": "^18.3.1",
     "rollup": "^4.20.0",
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-postcss": "^4.0.2",
+    "storybook": "^8.2.9",
     "tslib": "^2.6.3",
     "typescript": "^5.5.4"
   },

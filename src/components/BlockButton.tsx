@@ -1,11 +1,11 @@
 import React from 'react'
 import {useSlate} from 'slate-react'
-import CustomEditor from '../Editor/CustomEditor'
-import '../styles/index.css'
+import CustomEditor from '../MarkdownEditor/CustomEditor'
+import styles from '../styles/index.module.css'
 
 type BlockButtonProps = {
     children: React.ReactElement,
-    format: 'h1' | 'h2' | 'numbered-list' | 'bulleted-list' | 'left' | 'right' | 'center',
+    format: 'h1' | 'h2' | 'ol' | 'ul' | 'left' | 'right' | 'center',
 }
 
 const TEXT_ALIGN_TYPES = ['left', 'center', 'right']
@@ -24,7 +24,8 @@ const BlockButton: React.FC<BlockButtonProps> = (props) => {
     return (
         <button
             aria-label={format}
-            className={`'base_tools_editor_btn' ${isActive ? 'active_tools_editor_btn' : ' '}`}
+            className={styles.base_tools_editor_btn}
+            data-active={isActive}
             onMouseDown={onMousedown}
         >{children}</button>
     )

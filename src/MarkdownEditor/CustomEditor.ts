@@ -1,7 +1,7 @@
-import {BaseEditor, Editor, Element as SlateElement, Transforms, Node, NodeMatch} from 'slate'
+import {BaseEditor, Editor, Element as SlateElement, Transforms} from 'slate'
 
-const LIST_TYPES = ['numbered-list', 'bulleted-list']
-const TEXT_ALIGN_TYPES = ['left', 'center', 'right', 'justify']
+const LIST_TYPES = ['ol', 'ul']
+const TEXT_ALIGN_TYPES = ['left', 'center', 'right']
 
 const CustomEditor = {
     
@@ -50,7 +50,7 @@ const CustomEditor = {
             }
         } else {
             newProperties = {
-                type: isActive ? 'paragraph' : isList ? 'list-item' : format,
+                type: isActive ? 'paragraph' : isList ? 'li' : format,
             }
         }
         

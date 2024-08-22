@@ -10,6 +10,12 @@
     align-items: center;
     justify-content: center;
     outline: none;
+    &:hover {
+        background-color: #EEEEEE;
+    }
+}
+.base_tools_editor_btn[data-active=true] {
+    background-color: #dfe8fa4d;
 }
 .active_tools_editor_btn {
     background-color: #dfe8fa4d;

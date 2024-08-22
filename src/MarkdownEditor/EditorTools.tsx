@@ -1,11 +1,10 @@
-import React from 'react';
 import BlockButton from '../components/BlockButton'
 import MarkButton from '../components/MarkButton'
-import '../styles/index.css'
+import styles from '../styles/index.module.css'
 
 const EditorTools =  () => {
     return (
-        <div className={'tools_editor_container'}>
+        <div className={styles.tools_editor_container}>
             <BlockButton format={'h1'}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <path fill="none" stroke="#000000"
@@ -40,7 +39,7 @@ const EditorTools =  () => {
                           d="M5.5 2.5a.5.5 0 0 0-1 0v5a3.5 3.5 0 1 0 7 0v-5a.5.5 0 0 0-1 0v5a2.5 2.5 0 0 1-5 0zM4.5 13a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z"/>
                 </svg>
             </MarkButton>
-            <BlockButton format={'numbered-list'}>
+            <BlockButton format={'ol'}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16">
                     <g fill="#000000">
                         <path
@@ -50,7 +49,7 @@ const EditorTools =  () => {
                     </g>
                 </svg>
             </BlockButton>
-            <BlockButton format={'bulleted-list'}>
+            <BlockButton format={'ul'}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 56 56">
                     <path fill="#000000"
                           d="M7.34 16.762a2.936 2.936 0 0 0 2.953-2.93a2.94 2.94 0 0 0-2.953-2.953a2.956 2.956 0 0 0-2.953 2.953c0 1.617 1.336 2.93 2.953 2.93m10.36-1.055h32.015c1.078 0 1.898-.82 1.898-1.875c0-1.078-.82-1.898-1.898-1.898H17.699c-1.055 0-1.875.82-1.875 1.898a1.85 1.85 0 0 0 1.875 1.875M7.34 30.941a2.94 2.94 0 0 0 2.953-2.953a2.94 2.94 0 0 0-2.953-2.953a2.956 2.956 0 0 0-2.953 2.953a2.956 2.956 0 0 0 2.953 2.953m10.36-1.054h32.015a1.876 1.876 0 0 0 1.898-1.899c0-1.054-.82-1.875-1.898-1.875H17.699a1.85 1.85 0 0 0-1.875 1.875c0 1.055.82 1.899 1.875 1.899M7.34 45.12a2.956 2.956 0 0 0 2.953-2.953a2.94 2.94 0 0 0-2.953-2.953a2.956 2.956 0 0 0-2.953 2.953A2.97 2.97 0 0 0 7.34 45.12m10.36-1.078h32.015c1.078 0 1.898-.82 1.898-1.875c0-1.078-.82-1.898-1.898-1.898H17.699c-1.055 0-1.875.82-1.875 1.898a1.85 1.85 0 0 0 1.875 1.875"/>

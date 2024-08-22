@@ -3,7 +3,8 @@ import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
 import postcss from 'rollup-plugin-postcss';
-import packageJson from './package.json' assert { type: 'json' };
+
+import packageJson from './package.json' assert { type: 'json' }
 
 export default [
     {
@@ -23,9 +24,10 @@ export default [
         plugins: [
             resolve(), // 解析外部依赖
             commonjs(), // 将CommonJS 模块转换为ES模块
-            typescript({ tsconfig: './tsconfig.json', exclude: ['**/*.test.tsx', '**/*.test.ts', '**/*.stories.ts'] }),
+            typescript({ tsconfig: './tsconfig.json', exclude: ['**/*.test.tsx', '**/*.test.ts', '**/*.stories.ts', '**/*.stories.tsx'] }),
             postcss({ extensions: ['.css'], inject: true, extract: false }),
         ],
+        external: ['react', 'react-dom'],
     },
     {
         input: 'dist/esm/types/index.d.ts',

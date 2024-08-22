@@ -1,67 +1,40 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Editable, RenderLeafProps, RenderElementProps, Slate, withReact} from 'slate-react'
-import {createEditor, Descendant} from 'slate'
+import {createEditor, Descendant, Node} from 'slate'
 import RenderElements from '../components/RenderElements'
 import RenderLeaf from '../components/RenderLeaf'
 import CustomEditor from './CustomEditor'
 import EditorTools from './EditorTools'
 import {EditableProps} from 'slate-react/dist/components/editable'
 
-interface EditorProps {
-    maxLength?: number;
-    initialValue?: Descendant[];
-}
-
-const HOTKEYS = {
-    'mod+b': 'bold',
-    'mod+i': 'italic',
-    'mod+u': 'underline',
-    'mod+`': 'code',
-}
-
-
 type EasyMarkdownEditorProps = Omit<EditableProps,
     'children' |
     'renderElement' |
     'renderLeaf' |
     'onKeyDown' |
-    'onPaste'
+    'onPaste' |
+    'onChange'
 >
 
-interface BaseEditorType extends EasyMarkdownEditorProps{
-    initialValue: Descendant[],
+export interface MarkdownEditorType extends EasyMarkdownEditorProps {
+    maxLength?: number;
+    readonly?: boolean;
+    initialValue: Descendant[];
+    onChange?: (v: Descendant[]) => void;
 }
 
-interface CustomDivElement extends HTMLDivElement {
-    toMD: () => void;
-    toHTML: () => void;
-}
-
-const EasyMarkdownEditor = React.forwardRef((props: BaseEditorType, forwardRef: React.ForwardedRef<CustomDivElement> | null) => {
+const EasyMarkdownEditor = React.forwardRef((props: MarkdownEditorType, forwardRef: React.ForwardedRef<HTMLDivElement> | null) => {
     
     const {
         initialValue,
+        readOnly = false,
+        maxLength,
+        onChange,
         ...setProps
     } = props;
     
-    const localRef = React.useRef<HTMLDivElement>(null)
-    
-    React.useImperativeHandle(forwardRef, () => {
-        if (localRef.current) {
-            const customElement = localRef.current as CustomDivElement;
-            customElement.toMD = () => {
-                console.log("md")
-            };
-            customElement.toHTML = () => {
-                console.log("html")
-            };
-            
-            return customElement;
-        }
-        return null;
-    });
-    
     const editor = React.useMemo(() => withReact(createEditor()), []);
+    
     const [value, setValue] = React.useState<Descendant[]>(
         [
             {
@@ -70,6 +43,23 @@ const EasyMarkdownEditor = React.forwardRef((props: BaseEditorType, forwardRef: 
             }
         ] || initialValue
     );
+    const [isReadOnly, setIsReadOnly] = React.useState(readOnly);
+    
+    const handleChange = (value: Descendant[]) => {
+        const text = value.map((n) => Node.string(n)).join('\n')
+        if (readOnly || (maxLength && text.length >= maxLength)) {
+            setIsReadOnly(true)
+        } else {
+            setValue(value)
+            setIsReadOnly(false)
+        }
+    };
+    
+    useEffect(() => {
+        if (value.length > 0) {
+            onChange && onChange(value)
+        }
+    }, [value]);
     
     const renderLeaf = React.useCallback((props: RenderLeafProps) => <RenderLeaf {...props} />, []);
     const renderElement = React.useCallback((props: RenderElementProps) => <RenderElements {...props} />, []);
@@ -101,9 +91,15 @@ const EasyMarkdownEditor = React.forwardRef((props: BaseEditorType, forwardRef: 
     };
     
     return (
-        <Slate editor={editor} initialValue={value}>
+        <Slate
+            editor={editor}
+            initialValue={value}
+            onChange={handleChange}
+        >
             <EditorTools />
             <Editable
+                readOnly={isReadOnly}
+                ref={forwardRef}
                 renderLeaf={renderLeaf}
                 renderElement={renderElement}
                 onKeyDown={onkeydown}

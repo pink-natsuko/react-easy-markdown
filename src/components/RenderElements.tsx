@@ -9,17 +9,18 @@ const RenderElements: React.FC<RenderElementProps> = (props) => {
         children
     } = props;
     
-    const style = { textAlign: element.type };
+    const style = { textAlign: element.align };
+    
     switch (element.type) {
         case 'h1':
             return <h1 style={style} {...attributes}>{children}</h1>
         case 'h2':
             return <h2 style={style} {...attributes}>{children}</h2>
-        case 'list-item':
+        case 'li':
             return <li style={style} {...attributes}>{children}</li>
-        case 'numbered-list':
+        case 'ol':
             return <ol style={style} {...attributes}>{children}</ol>
-        case 'bulleted-list':
+        case 'ul':
             return <ul style={style} {...attributes}>{children}</ul>
         default:
             return <p style={style} {...attributes}>{children}</p>
